@@ -131,105 +131,105 @@ class _MyHomePageState extends State<MyHomePage> {
                       Container(
                         height: 250,
                         width: 200,
-                        margin: EdgeInsets.all(10),
+                        margin:  const EdgeInsets.all(10),
                         child: Image.asset('assets/images/man_one.jpg'),
                       ),
                       Container(
                         height: 250,
                         width: 200,
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         child: Image.asset('assets/images/man_one.jpg'),
                       ),
                       Container(
                         height: 250,
                         width: 200,
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         child: Image.asset('assets/images/man_one.jpg'),
                       ),
                       Container(
                         height: 250,
                         width: 200,
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         child: Image.asset('assets/images/man_one.jpg'),
                       ),
                       Container(
                         height: 250,
                         width: 200,
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         child: Image.asset('assets/images/man_one.jpg'),
                       ),
                       Container(
                         height: 250,
                         width: 200,
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         child: Image.asset('assets/images/man_one.jpg'),
                       ),
                       Container(
                         height: 250,
                         width: 200,
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         child: Image.asset('assets/images/man_one.jpg'),
                       ),
                       Container(
                         height: 250,
                         width: 200,
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         child: Image.asset('assets/images/man_one.jpg'),
                       ),
                       Container(
                         height: 250,
                         width: 200,
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         child: Image.asset('assets/images/man_one.jpg'),
                       ),
                       Container(
                         height: 250,
                         width: 200,
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         child: Image.asset('assets/images/man_one.jpg'),
                       ),
                       Container(
                         height: 250,
                         width: 200,
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         child: Image.asset('assets/images/man_one.jpg'),
                       ),
                     ],
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: 250,
                   child: Image.asset('assets/images/man_one.jpg'),
                 ),
-                Container(
+                SizedBox(
                   height: 250,
                   child: Image.asset('assets/images/man_one.jpg'),
                 ),
-                Container(
+                SizedBox(
                   height: 250,
                   child: Image.asset('assets/images/man_one.jpg'),
                 ),
-                Container(
+                SizedBox(
                   height: 250,
                   child: Image.asset('assets/images/man_one.jpg'),
                 ),
-                Container(
+                SizedBox(
                   height: 250,
                   child: Image.asset('assets/images/man_one.jpg'),
                 ),
-                Container(
+                SizedBox(
                   height: 250,
                   child: Image.asset('assets/images/man_one.jpg'),
                 ),
-                Container(
+                SizedBox(
                   height: 250,
                   child: Image.asset('assets/images/man_one.jpg'),
                 ),
-                Container(
+                SizedBox(
                   height: 250,
                   child: Image.asset('assets/images/man_one.jpg'),
                 ),
-                Container(
+                SizedBox(
                   height: 250,
                   child: Image.asset('assets/images/man_one.jpg'),
                 ),

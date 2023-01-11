@@ -66,11 +66,44 @@ class _MyHomePageState extends State<MyHomePage> {
       // ));
 
       // image widget
+      // body: Center(
+      //   child: Container(
+      //       width: 300,
+      //       height: 300,
+      //       child: Image.asset('assets/images/man_one.jpg')),
+      // ),
+
+      // Row and Columns
+      // body: Center(
+      //   child: Column(children: <Widget>[
+      //     Text('data'),
+      //     Text('data 2'),
+      //     Text('data 3'),
+      //     Text('data 4'),
+      //     Text('data 5'),
+      //     Container(
+      //       width: 100,
+      //       height: 100,
+      //       child: Image.asset('assets/images/man_one.jpg'),
+      //     )
+      //   ]),
+      // ),
+
+      // Columns
       body: Center(
-        child: Container(
-            width: 300,
-            height: 300,
-            child: Image.asset('assets/images/man_one.jpg')),
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+          Container(
+            width: 50,
+            height: 50,
+            child: Image.asset('assets/images/man_one.jpg'),
+          ),
+          Container(
+            width: 100,
+            height: 100,
+            child: Image.asset('assets/images/man_one.jpg'),
+          ),
+        ]),
       ),
     );
   }

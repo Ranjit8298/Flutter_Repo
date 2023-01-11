@@ -118,123 +118,723 @@ class _MyHomePageState extends State<MyHomePage> {
 
       // ScrollView
 
-      body: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: SingleChildScrollView(
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Container(
-                        height: 250,
-                        width: 200,
-                        margin:  const EdgeInsets.all(10),
-                        child: Image.asset('assets/images/man_one.jpg'),
+      // body: Padding(
+      //   padding: const EdgeInsets.all(15.0),
+      //   child: SingleChildScrollView(
+      //     child: Column(
+      //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //         children: <Widget>[
+      //           SingleChildScrollView(
+      //             scrollDirection: Axis.horizontal,
+      //             child: Row(
+      //               children: [
+      //                 Container(
+      //                   height: 250,
+      //                   width: 200,
+      //                   margin:  const EdgeInsets.all(10),
+      //                   child: Image.asset('assets/images/man_one.jpg'),
+      //                 ),
+      //                 Container(
+      //                   height: 250,
+      //                   width: 200,
+      //                   margin: const EdgeInsets.all(10),
+      //                   child: Image.asset('assets/images/man_one.jpg'),
+      //                 ),
+      //                 Container(
+      //                   height: 250,
+      //                   width: 200,
+      //                   margin: const EdgeInsets.all(10),
+      //                   child: Image.asset('assets/images/man_one.jpg'),
+      //                 ),
+      //                 Container(
+      //                   height: 250,
+      //                   width: 200,
+      //                   margin: const EdgeInsets.all(10),
+      //                   child: Image.asset('assets/images/man_one.jpg'),
+      //                 ),
+      //                 Container(
+      //                   height: 250,
+      //                   width: 200,
+      //                   margin: const EdgeInsets.all(10),
+      //                   child: Image.asset('assets/images/man_one.jpg'),
+      //                 ),
+      //                 Container(
+      //                   height: 250,
+      //                   width: 200,
+      //                   margin: const EdgeInsets.all(10),
+      //                   child: Image.asset('assets/images/man_one.jpg'),
+      //                 ),
+      //                 Container(
+      //                   height: 250,
+      //                   width: 200,
+      //                   margin: const EdgeInsets.all(10),
+      //                   child: Image.asset('assets/images/man_one.jpg'),
+      //                 ),
+      //                 Container(
+      //                   height: 250,
+      //                   width: 200,
+      //                   margin: const EdgeInsets.all(10),
+      //                   child: Image.asset('assets/images/man_one.jpg'),
+      //                 ),
+      //                 Container(
+      //                   height: 250,
+      //                   width: 200,
+      //                   margin: const EdgeInsets.all(10),
+      //                   child: Image.asset('assets/images/man_one.jpg'),
+      //                 ),
+      //                 Container(
+      //                   height: 250,
+      //                   width: 200,
+      //                   margin: const EdgeInsets.all(10),
+      //                   child: Image.asset('assets/images/man_one.jpg'),
+      //                 ),
+      //                 Container(
+      //                   height: 250,
+      //                   width: 200,
+      //                   margin: const EdgeInsets.all(10),
+      //                   child: Image.asset('assets/images/man_one.jpg'),
+      //                 ),
+      //               ],
+      //             ),
+      //           ),
+      //           SizedBox(
+      //             height: 250,
+      //             child: Image.asset('assets/images/man_one.jpg'),
+      //           ),
+      //           SizedBox(
+      //             height: 250,
+      //             child: Image.asset('assets/images/man_one.jpg'),
+      //           ),
+      //           SizedBox(
+      //             height: 250,
+      //             child: Image.asset('assets/images/man_one.jpg'),
+      //           ),
+      //           SizedBox(
+      //             height: 250,
+      //             child: Image.asset('assets/images/man_one.jpg'),
+      //           ),
+      //           SizedBox(
+      //             height: 250,
+      //             child: Image.asset('assets/images/man_one.jpg'),
+      //           ),
+      //           SizedBox(
+      //             height: 250,
+      //             child: Image.asset('assets/images/man_one.jpg'),
+      //           ),
+      //           SizedBox(
+      //             height: 250,
+      //             child: Image.asset('assets/images/man_one.jpg'),
+      //           ),
+      //           SizedBox(
+      //             height: 250,
+      //             child: Image.asset('assets/images/man_one.jpg'),
+      //           ),
+      //           SizedBox(
+      //             height: 250,
+      //             child: Image.asset('assets/images/man_one.jpg'),
+      //           ),
+      //         ]),
+      //   ),
+      // ),
+      body: ListView(
+        reverse: true,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 60,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/man_one.jpg',
+                      fit: BoxFit.contain,
+                      width: 50,
+                      height: 50,
+                    ),
+                    const Text(
+                      'Ranjit Kumar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const InkWell(
+                      child: Text(
+                        'SEND',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
                       ),
-                      Container(
-                        height: 250,
-                        width: 200,
-                        margin: const EdgeInsets.all(10),
-                        child: Image.asset('assets/images/man_one.jpg'),
-                      ),
-                      Container(
-                        height: 250,
-                        width: 200,
-                        margin: const EdgeInsets.all(10),
-                        child: Image.asset('assets/images/man_one.jpg'),
-                      ),
-                      Container(
-                        height: 250,
-                        width: 200,
-                        margin: const EdgeInsets.all(10),
-                        child: Image.asset('assets/images/man_one.jpg'),
-                      ),
-                      Container(
-                        height: 250,
-                        width: 200,
-                        margin: const EdgeInsets.all(10),
-                        child: Image.asset('assets/images/man_one.jpg'),
-                      ),
-                      Container(
-                        height: 250,
-                        width: 200,
-                        margin: const EdgeInsets.all(10),
-                        child: Image.asset('assets/images/man_one.jpg'),
-                      ),
-                      Container(
-                        height: 250,
-                        width: 200,
-                        margin: const EdgeInsets.all(10),
-                        child: Image.asset('assets/images/man_one.jpg'),
-                      ),
-                      Container(
-                        height: 250,
-                        width: 200,
-                        margin: const EdgeInsets.all(10),
-                        child: Image.asset('assets/images/man_one.jpg'),
-                      ),
-                      Container(
-                        height: 250,
-                        width: 200,
-                        margin: const EdgeInsets.all(10),
-                        child: Image.asset('assets/images/man_one.jpg'),
-                      ),
-                      Container(
-                        height: 250,
-                        width: 200,
-                        margin: const EdgeInsets.all(10),
-                        child: Image.asset('assets/images/man_one.jpg'),
-                      ),
-                      Container(
-                        height: 250,
-                        width: 200,
-                        margin: const EdgeInsets.all(10),
-                        child: Image.asset('assets/images/man_one.jpg'),
-                      ),
-                    ],
-                  ),
+                    )
+                  ],
                 ),
-                SizedBox(
-                  height: 250,
-                  child: Image.asset('assets/images/man_one.jpg'),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 60,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/man_one.jpg',
+                      fit: BoxFit.contain,
+                      width: 50,
+                      height: 50,
+                    ),
+                    const Text(
+                      'Ranjit Kumar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const InkWell(
+                      child: Text(
+                        'SEND',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
                 ),
-                SizedBox(
-                  height: 250,
-                  child: Image.asset('assets/images/man_one.jpg'),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 60,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/man_one.jpg',
+                      fit: BoxFit.contain,
+                      width: 50,
+                      height: 50,
+                    ),
+                    const Text(
+                      'Ranjit Kumar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const InkWell(
+                      child: Text(
+                        'SEND',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
                 ),
-                SizedBox(
-                  height: 250,
-                  child: Image.asset('assets/images/man_one.jpg'),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 60,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/man_one.jpg',
+                      fit: BoxFit.contain,
+                      width: 50,
+                      height: 50,
+                    ),
+                    const Text(
+                      'Ranjit Kumar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const InkWell(
+                      child: Text(
+                        'SEND',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
                 ),
-                SizedBox(
-                  height: 250,
-                  child: Image.asset('assets/images/man_one.jpg'),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 60,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/man_one.jpg',
+                      fit: BoxFit.contain,
+                      width: 50,
+                      height: 50,
+                    ),
+                    const Text(
+                      'Ranjit Kumar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const InkWell(
+                      child: Text(
+                        'SEND',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
                 ),
-                SizedBox(
-                  height: 250,
-                  child: Image.asset('assets/images/man_one.jpg'),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 60,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/man_one.jpg',
+                      fit: BoxFit.contain,
+                      width: 50,
+                      height: 50,
+                    ),
+                    const Text(
+                      'Ranjit Kumar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const InkWell(
+                      child: Text(
+                        'SEND',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
                 ),
-                SizedBox(
-                  height: 250,
-                  child: Image.asset('assets/images/man_one.jpg'),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 60,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/man_one.jpg',
+                      fit: BoxFit.contain,
+                      width: 50,
+                      height: 50,
+                    ),
+                    const Text(
+                      'Ranjit Kumar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const InkWell(
+                      child: Text(
+                        'SEND',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
                 ),
-                SizedBox(
-                  height: 250,
-                  child: Image.asset('assets/images/man_one.jpg'),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 60,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/man_one.jpg',
+                      fit: BoxFit.contain,
+                      width: 50,
+                      height: 50,
+                    ),
+                    const Text(
+                      'Ranjit Kumar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const InkWell(
+                      child: Text(
+                        'SEND',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
                 ),
-                SizedBox(
-                  height: 250,
-                  child: Image.asset('assets/images/man_one.jpg'),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 60,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/man_one.jpg',
+                      fit: BoxFit.contain,
+                      width: 50,
+                      height: 50,
+                    ),
+                    const Text(
+                      'Ranjit Kumar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const InkWell(
+                      child: Text(
+                        'SEND',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
                 ),
-                SizedBox(
-                  height: 250,
-                  child: Image.asset('assets/images/man_one.jpg'),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 60,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/man_one.jpg',
+                      fit: BoxFit.contain,
+                      width: 50,
+                      height: 50,
+                    ),
+                    const Text(
+                      'Ranjit Kumar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const InkWell(
+                      child: Text(
+                        'SEND',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
                 ),
-              ]),
-        ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 60,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/man_one.jpg',
+                      fit: BoxFit.contain,
+                      width: 50,
+                      height: 50,
+                    ),
+                    const Text(
+                      'Ranjit Kumar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const InkWell(
+                      child: Text(
+                        'SEND',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 60,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/man_one.jpg',
+                      fit: BoxFit.contain,
+                      width: 50,
+                      height: 50,
+                    ),
+                    const Text(
+                      'Ranjit Kumar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const InkWell(
+                      child: Text(
+                        'SEND',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 60,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/man_one.jpg',
+                      fit: BoxFit.contain,
+                      width: 50,
+                      height: 50,
+                    ),
+                    const Text(
+                      'Ranjit Kumar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const InkWell(
+                      child: Text(
+                        'SEND',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 60,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/man_one.jpg',
+                      fit: BoxFit.contain,
+                      width: 50,
+                      height: 50,
+                    ),
+                    const Text(
+                      'Ranjit Kumar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const InkWell(
+                      child: Text(
+                        'SEND',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 60,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/man_one.jpg',
+                      fit: BoxFit.contain,
+                      width: 50,
+                      height: 50,
+                    ),
+                    const Text(
+                      'Ranjit Kumar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    const InkWell(
+                      child: Text(
+                        'SEND',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 60,
+              color: Colors.blueGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/man_one.jpg',
+                      fit: BoxFit.contain,
+                      width: 50,
+                      height: 50,
+                    ),
+                    const Text(
+                      'Aanand Kumar',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+                     InkWell(
+                      onTap: () {
+                        print('last object');
+                      },
+                      child: const Text(
+                        'SEND',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          )
+        ],
       ),
     );
   }

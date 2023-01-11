@@ -237,23 +237,37 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
       body: ListView(
-        reverse: true,
+        reverse: false,
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
               height: 60,
-              color: Colors.blueGrey,
+              decoration: BoxDecoration(
+                  color: Colors.blueGrey,
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(width: 1, color: Colors.black),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.red.shade200,
+                      blurRadius: 5,
+                      spreadRadius: 5,
+                    )
+                  ]),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Image.asset(
-                      'assets/images/man_one.jpg',
-                      fit: BoxFit.contain,
+                    Container(
                       width: 50,
                       height: 50,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25.0)),
+                      child: Image.asset(
+                        'assets/images/man_one.jpg',
+                        fit: BoxFit.contain,
+                      ),
                     ),
                     const Text(
                       'Ranjit Kumar',
@@ -817,7 +831,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontSize: 18,
                           fontWeight: FontWeight.w500),
                     ),
-                     InkWell(
+                    InkWell(
                       onTap: () {
                         print('last object');
                       },

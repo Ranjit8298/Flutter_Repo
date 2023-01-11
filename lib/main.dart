@@ -107,12 +107,135 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       //InkWell
-      body: Center(child: InkWell(
-        onTap: () {
-          print('object inkwell');
-        },
-        child: Image.asset('assets/images/man_one.jpg'),
-      ),),
+      // body: Center(
+      //   child: InkWell(
+      //     onTap: () {
+      //       print('object inkwell');
+      //     },
+      //     child: Image.asset('assets/images/man_one.jpg'),
+      //   ),
+      // ),
+
+      // ScrollView
+
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: SingleChildScrollView(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 250,
+                        width: 200,
+                        margin: EdgeInsets.all(10),
+                        child: Image.asset('assets/images/man_one.jpg'),
+                      ),
+                      Container(
+                        height: 250,
+                        width: 200,
+                        margin: EdgeInsets.all(10),
+                        child: Image.asset('assets/images/man_one.jpg'),
+                      ),
+                      Container(
+                        height: 250,
+                        width: 200,
+                        margin: EdgeInsets.all(10),
+                        child: Image.asset('assets/images/man_one.jpg'),
+                      ),
+                      Container(
+                        height: 250,
+                        width: 200,
+                        margin: EdgeInsets.all(10),
+                        child: Image.asset('assets/images/man_one.jpg'),
+                      ),
+                      Container(
+                        height: 250,
+                        width: 200,
+                        margin: EdgeInsets.all(10),
+                        child: Image.asset('assets/images/man_one.jpg'),
+                      ),
+                      Container(
+                        height: 250,
+                        width: 200,
+                        margin: EdgeInsets.all(10),
+                        child: Image.asset('assets/images/man_one.jpg'),
+                      ),
+                      Container(
+                        height: 250,
+                        width: 200,
+                        margin: EdgeInsets.all(10),
+                        child: Image.asset('assets/images/man_one.jpg'),
+                      ),
+                      Container(
+                        height: 250,
+                        width: 200,
+                        margin: EdgeInsets.all(10),
+                        child: Image.asset('assets/images/man_one.jpg'),
+                      ),
+                      Container(
+                        height: 250,
+                        width: 200,
+                        margin: EdgeInsets.all(10),
+                        child: Image.asset('assets/images/man_one.jpg'),
+                      ),
+                      Container(
+                        height: 250,
+                        width: 200,
+                        margin: EdgeInsets.all(10),
+                        child: Image.asset('assets/images/man_one.jpg'),
+                      ),
+                      Container(
+                        height: 250,
+                        width: 200,
+                        margin: EdgeInsets.all(10),
+                        child: Image.asset('assets/images/man_one.jpg'),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 250,
+                  child: Image.asset('assets/images/man_one.jpg'),
+                ),
+                Container(
+                  height: 250,
+                  child: Image.asset('assets/images/man_one.jpg'),
+                ),
+                Container(
+                  height: 250,
+                  child: Image.asset('assets/images/man_one.jpg'),
+                ),
+                Container(
+                  height: 250,
+                  child: Image.asset('assets/images/man_one.jpg'),
+                ),
+                Container(
+                  height: 250,
+                  child: Image.asset('assets/images/man_one.jpg'),
+                ),
+                Container(
+                  height: 250,
+                  child: Image.asset('assets/images/man_one.jpg'),
+                ),
+                Container(
+                  height: 250,
+                  child: Image.asset('assets/images/man_one.jpg'),
+                ),
+                Container(
+                  height: 250,
+                  child: Image.asset('assets/images/man_one.jpg'),
+                ),
+                Container(
+                  height: 250,
+                  child: Image.asset('assets/images/man_one.jpg'),
+                ),
+              ]),
+        ),
+      ),
     );
   }
 }

@@ -33,36 +33,45 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        // body: Container(
-        //     width: 150,
-        //     height: 50,
-        //     margin: const EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
-        //     color: Colors.red,
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      // body: Container(
+      //     width: 150,
+      //     height: 50,
+      //     margin: const EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
+      //     color: Colors.red,
 
-        //     child: const Center(
-        //       child: Text(
-        //         'Hello Dev',
-        //         style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
-        //       ),
-        //     )),
+      //     child: const Center(
+      //       child: Text(
+      //         'Hello Dev',
+      //         style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+      //       ),
+      //     )),
 
-        // Add Button in Flutter
-        body: Center(
-          // child: ElevatedButton(
-          //   onPressed: (){
-          //     print('Elevated Button');
-          //   },
-          //   child: const Text('Elevated'),
-          // ),
-          child: OutlinedButton(
-            child: const Text('Outlined Button'),
-            onPressed: () {
-              print('outlined button');
-            },
-          ),
-        ));
+      // Add Button in Flutter
+      // body: Center(
+      //   // child: ElevatedButton(
+      //   //   onPressed: (){
+      //   //     print('Elevated Button');
+      //   //   },
+      //   //   child: const Text('Elevated'),
+      //   // ),
+      //   child: OutlinedButton(
+      //     child: const Text('Outlined Button'),
+      //     onPressed: () {
+      //       print('outlined button');
+      //     },
+      //   ),
+      // ));
+
+      // image widget
+      body: Center(
+        child: Container(
+            width: 300,
+            height: 300,
+            child: Image.asset('assets/images/man_one.jpg')),
+      ),
+    );
   }
 }

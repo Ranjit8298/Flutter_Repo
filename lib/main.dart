@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const MyHomePage(title: 'Flutter Container Example'),
+      home: const MyHomePage(title: 'Flutter Example'),
     );
   }
 }
@@ -90,21 +90,29 @@ class _MyHomePageState extends State<MyHomePage> {
       // ),
 
       // Columns
-      body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-          Container(
-            width: 50,
-            height: 50,
-            child: Image.asset('assets/images/man_one.jpg'),
-          ),
-          Container(
-            width: 100,
-            height: 100,
-            child: Image.asset('assets/images/man_one.jpg'),
-          ),
-        ]),
-      ),
+      // body: Center(
+      //   child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //     children: <Widget>[
+      //     Container(
+      //       width: 50,
+      //       height: 50,
+      //       child: Image.asset('assets/images/man_one.jpg'),
+      //     ),
+      //     Container(
+      //       width: 100,
+      //       height: 100,
+      //       child: Image.asset('assets/images/man_one.jpg'),
+      //     ),
+      //   ]),
+      // ),
+
+      //InkWell
+      body: Center(child: InkWell(
+        onTap: () {
+          print('object inkwell');
+        },
+        child: Image.asset('assets/images/man_one.jpg'),
+      ),),
     );
   }
 }

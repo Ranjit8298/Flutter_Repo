@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_repo/Widgets/CustomButtonWidgets.dart';
 
 void main() {
   runApp(const MyApp());
@@ -863,52 +864,149 @@ class _MyHomePageState extends State<MyHomePage> {
       //   )
       // )
 
-      body: Center(
-          child: Container(
-              width: 335,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    margin: EdgeInsets.all(10),
-                    child: TextField(
-                      controller: emailTxt,
-                      keyboardType: TextInputType.emailAddress,
-                      decoration: InputDecoration(
-                          hintText: 'Enter your email',
-                          prefixIcon: Icon(Icons.email_rounded),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                              borderSide: BorderSide(color: Colors.grey))),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(10),
-                    child: TextField(
-                      controller: passwordTxt,
-                      keyboardType: TextInputType.visiblePassword,
-                      obscureText: true,
-                      decoration: InputDecoration(
-                          hintText: 'Enter your password',
-                          prefixIcon: Icon(Icons.password_rounded),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                              borderSide: BorderSide(color: Colors.grey))),
-                    ),
-                  ),
-                  Container(
-                    width: 290,
-                    height: 45,
-                    margin: EdgeInsets.only(top: 20),
-                    child: ElevatedButton(
-                        onPressed: () {
-                          print(
-                              'Email is ${emailTxt} and password is ${passwordTxt}');
-                        },
-                        child: Text('Submit')),
-                  )
-                ],
-              ))),
+// textFiled
+      // body: Center(
+      //     child: Container(
+      //         width: 335,
+      //         child: Column(
+      //           mainAxisAlignment: MainAxisAlignment.center,
+      //           children: [
+      //             Container(
+      //               margin: EdgeInsets.all(10),
+      //               child: TextField(
+      //                 controller: emailTxt,
+      //                 keyboardType: TextInputType.emailAddress,
+      //                 decoration: InputDecoration(
+      //                     hintText: 'Enter your email',
+      //                     prefixIcon: Icon(Icons.email_rounded),
+      //                     border: OutlineInputBorder(
+      //                         borderRadius: BorderRadius.circular(15),
+      //                         borderSide: BorderSide(color: Colors.grey))),
+      //               ),
+      //             ),
+      //             Container(
+      //               margin: EdgeInsets.all(10),
+      //               child: TextField(
+      //                 controller: passwordTxt,
+      //                 keyboardType: TextInputType.visiblePassword,
+      //                 obscureText: true,
+      //                 decoration: InputDecoration(
+      //                     hintText: 'Enter your password',
+      //                     prefixIcon: Icon(Icons.password_rounded),
+      //                     border: OutlineInputBorder(
+      //                         borderRadius: BorderRadius.circular(15),
+      //                         borderSide: BorderSide(color: Colors.grey))),
+      //               ),
+      //             ),
+      //             Container(
+      //               width: 290,
+      //               height: 45,
+      //               margin: EdgeInsets.only(top: 20),
+      //               child: ElevatedButton(
+      //                   onPressed: () {
+      //                     print(
+      //                         'Email is ${emailTxt} and password is ${passwordTxt}');
+      //                   },
+      //                   child: Text('Submit')),
+      //             ),
+      //           ],
+      //         ))),
+
+// date picker modal
+      // body: Center(
+      //   child: Column(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Text('Select Date'),
+      //       Container(
+      //           margin: EdgeInsets.only(top: 10),
+      //           child: ElevatedButton(
+      //               onPressed: () async {
+      //                 DateTime? datePicker = await showDatePicker(
+      //                   context: context,
+      //                   initialDate: DateTime.now(),
+      //                   firstDate: DateTime(1900),
+      //                   lastDate: DateTime(2004),
+      //                 );
+      //               },
+      //               child: Text('Show')))
+      //     ],
+      //   ),
+      // ),
+
+      // Grid View
+      // body: Padding(
+      //   padding: const EdgeInsets.all(10.0),
+      //   child: GridView.count(
+      //     crossAxisCount: 3,
+      //     children: [
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Container(
+      //           color: Colors.black,
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Container(
+      //           color: Colors.blue,
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Container(
+      //           color: Colors.green,
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Container(
+      //           color: Colors.amberAccent,
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Container(
+      //           color: Colors.orange,
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Container(
+      //           color: Colors.yellow,
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Container(
+      //           color: Colors.purple,
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Container(
+      //           color: Colors.indigo,
+      //         ),
+      //       ),
+      //       Padding(
+      //         padding: const EdgeInsets.all(8.0),
+      //         child: Container(
+      //           color: Colors.deepPurpleAccent,
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
+
+      //custom button call
+      body: CustomButtonWidgets(
+        btnName: 'Submit',
+        btnColor: Colors.red,
+        btnIcon: Icon(Icons.login_rounded),
+        callback: (() {
+          print('object clicked');
+        }),
+      ),
     );
   }
 }

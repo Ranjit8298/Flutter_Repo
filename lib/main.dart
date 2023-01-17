@@ -1,6 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_repo/intro_screen.dart';
+import 'package:flutter_repo/splash_screen.dart';
+import 'package:flutter_repo/user_data_screen.dart';
 import 'package:flutter_repo/widgets/custom_textfield.dart';
 // import 'package:flutter_repo/Widgets/CustomButtonWidgets.dart';
 
@@ -20,7 +23,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: const MyHomePage(title: 'Flutter Example'),
+      // home: const MyHomePage(title: 'Flutter Example'),
+      home: SplashScreen(),
     );
   }
 }
@@ -34,10 +38,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var numberTwo = TextEditingController();
-  var numberOne = TextEditingController();
-  var customTxt = TextEditingController();
-  var resultNumber = "";
+  var mobileNoTxt = TextEditingController();
+  var addresstxt = TextEditingController();
+  var nameTxt = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1134,102 +1138,174 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
 
-      body: Container(
-        color: Colors.white24,
-        child: Center(
-          child: Column(
-            children: [
-              Container(
-                margin: const EdgeInsets.all(10),
-                child: TextField(
-                  controller: numberOne,
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                      hintText: 'Enter first Number',
-                      prefixIcon: const Icon(Icons.numbers_rounded),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
-                          borderSide: const BorderSide(color: Colors.grey))),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.all(10),
-                child: TextField(
-                  controller: numberTwo,
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                      hintText: 'Enter second Number',
-                      prefixIcon: const Icon(Icons.numbers_rounded),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
-                          borderSide: const BorderSide(color: Colors.grey))),
-                ),
-              ),
-              CustomTextField(
-                controllerTxt: customTxt,
-                keyboardType: TextInputType.emailAddress,
-                hintText: 'Enter Email',
-                labelText: 'Email',
-                prefixIcon: const Icon(Icons.date_range_rounded),
-                onChanged: (customTxt) {
-                  print(customTxt);
-                },
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton.icon(
-                      onPressed: () {
-                        var no1 = int.parse(numberOne.text.toString());
-                        var no2 = int.parse(numberTwo.text.toString());
-                        var sum = no1 + no2;
-                        resultNumber = "sum of $no1 and $no2 is: $sum";
-                        print(customTxt);
-                        setState(() {});
-                      },
-                      icon: const Icon(Icons.add),
-                      label: const Text('Add')),
-                  ElevatedButton.icon(
-                      onPressed: () {
-                        var no1 = int.parse(numberOne.text.toString());
-                        var no2 = int.parse(numberTwo.text.toString());
-                        var sub = no1 - no2;
-                        resultNumber = "substraction of $no1 and $no2 is: $sub";
-                        setState(() {});
-                      },
-                      icon: const Icon(Icons.minimize_rounded),
-                      label: const Text('Sub')),
-                  ElevatedButton.icon(
-                      onPressed: () {
-                        var no1 = int.parse(numberOne.text.toString());
-                        var no2 = int.parse(numberTwo.text.toString());
-                        var multi = no1 * no2;
-                        resultNumber =
-                            "multiplication of $no1 and $no2 is: $multi";
-                        setState(() {});
-                      },
-                      icon: const Icon(Icons.star_border_rounded),
-                      label: const Text('Multi')),
-                  ElevatedButton.icon(
-                      onPressed: () {
-                        var no1 = int.parse(numberOne.text.toString());
-                        var no2 = int.parse(numberTwo.text.toString());
-                        var div = no1 / no2;
-                        resultNumber = "division of $no1 and $no2 is: $div";
-                        setState(() {});
-                      },
-                      icon: const Icon(Icons.safety_divider_rounded),
-                      label: const Text('Div'))
-                ],
-              ),
-              Container(
-                  margin: const EdgeInsets.only(top: 20),
+      // body: Container(
+      //   color: Colors.white24,
+      //   child: Center(
+      //     child: Column(
+      //       children: [
+      //         Container(
+      //           margin: const EdgeInsets.all(10),
+      //           child: TextField(
+      //             controller: numberOne,
+      //             keyboardType: TextInputType.number,
+      //             decoration: InputDecoration(
+      //                 hintText: 'Enter first Number',
+      //                 prefixIcon: const Icon(Icons.numbers_rounded),
+      //                 border: OutlineInputBorder(
+      //                     borderRadius: BorderRadius.circular(15),
+      //                     borderSide: const BorderSide(color: Colors.grey))),
+      //           ),
+      //         ),
+      //         Container(
+      //           margin: const EdgeInsets.all(10),
+      //           child: TextField(
+      //             controller: numberTwo,
+      //             keyboardType: TextInputType.number,
+      //             decoration: InputDecoration(
+      //                 hintText: 'Enter second Number',
+      //                 prefixIcon: const Icon(Icons.numbers_rounded),
+      //                 border: OutlineInputBorder(
+      //                     borderRadius: BorderRadius.circular(15),
+      //                     borderSide: const BorderSide(color: Colors.grey))),
+      //           ),
+      //         ),
+      //         CustomTextField(
+      //           controllerTxt: customTxt,
+      //           keyboardType: TextInputType.emailAddress,
+      //           hintText: 'Enter Email',
+      //           labelText: 'Email',
+      //           prefixIcon: const Icon(Icons.date_range_rounded),
+      //           onChanged: (customTxt) {
+      //             print(customTxt);
+      //           },
+      //         ),
+      //         Row(
+      //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //           children: [
+      //             ElevatedButton.icon(
+      //                 onPressed: () {
+      //                   var no1 = int.parse(numberOne.text.toString());
+      //                   var no2 = int.parse(numberTwo.text.toString());
+      //                   var sum = no1 + no2;
+      //                   resultNumber = "sum of $no1 and $no2 is: $sum";
+      //                   setState(() {});
+      //                 },
+      //                 icon: const Icon(Icons.add),
+      //                 label: const Text('Add')),
+      //             ElevatedButton.icon(
+      //                 onPressed: () {
+      //                   var no1 = int.parse(numberOne.text.toString());
+      //                   var no2 = int.parse(numberTwo.text.toString());
+      //                   var sub = no1 - no2;
+      //                   resultNumber = "substraction of $no1 and $no2 is: $sub";
+      //                   setState(() {});
+      //                 },
+      //                 icon: const Icon(Icons.minimize_rounded),
+      //                 label: const Text('Sub')),
+      //             ElevatedButton.icon(
+      //                 onPressed: () {
+      //                   var no1 = int.parse(numberOne.text.toString());
+      //                   var no2 = int.parse(numberTwo.text.toString());
+      //                   var multi = no1 * no2;
+      //                   resultNumber =
+      //                       "multiplication of $no1 and $no2 is: $multi";
+      //                   setState(() {});
+      //                 },
+      //                 icon: const Icon(Icons.star_border_rounded),
+      //                 label: const Text('Multi')),
+      //             ElevatedButton.icon(
+      //                 onPressed: () {
+      //                   var no1 = int.parse(numberOne.text.toString());
+      //                   var no2 = int.parse(numberTwo.text.toString());
+      //                   var div = no1 / no2;
+      //                   resultNumber = "division of $no1 and $no2 is: $div";
+      //                   setState(() {});
+      //                 },
+      //                 icon: const Icon(Icons.safety_divider_rounded),
+      //                 label: const Text('Div'))
+      //           ],
+      //         ),
+      //         Container(
+      //             margin: const EdgeInsets.only(top: 20),
+      //             child: Text(
+      //               '$resultNumber',
+      //               style: TextStyle(fontSize: 20),
+      //             )),
+      //         ElevatedButton(
+      //             onPressed: () {
+      //               print(customTxt);
+      //               setState(() {});
+      //             },
+      //             child: Text('Print')),
+      //         ElevatedButton(
+      //             onPressed: () {
+      //               Navigator.push(context,
+      //                   MaterialPageRoute(builder: (context) {
+      //                 return IntroScreen();
+      //               }));
+      //             },
+      //             child: Text(
+      //               'Go To Intro Screen',
+      //             ))
+      //       ],
+      //     ),
+      //   ),
+      // ),
+
+      // passing data from one screen to another
+      body: Center(
+        child: Column(
+          children: [
+            CustomTextField(
+              controllerTxt: nameTxt,
+              keyboardType: TextInputType.name,
+              hintText: 'Enter Name',
+              labelText: 'Name',
+              prefixIcon: const Icon(Icons.person),
+              onChanged: (nameTxt) {
+                print(nameTxt);
+              },
+            ),
+            CustomTextField(
+              controllerTxt: addresstxt,
+              keyboardType: TextInputType.streetAddress,
+              hintText: 'Enter Address',
+              labelText: 'Address',
+              prefixIcon: const Icon(Icons.location_on_rounded),
+              onChanged: (addresstxt) {
+                print(addresstxt);
+              },
+            ),
+            CustomTextField(
+              controllerTxt: mobileNoTxt,
+              keyboardType: TextInputType.number,
+              hintText: 'Enter Mobile No',
+              labelText: 'Mobile No',
+              prefixIcon: const Icon(Icons.phone_android_rounded),
+              onChanged: (mobileNoTxt) {
+                print(mobileNoTxt);
+              },
+            ),
+            Container(
+              width: 335,
+              height: 45,
+              margin: EdgeInsets.only(top: 30),
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return UserDataScreen(
+                          nameTxt.text.toString(),
+                          addresstxt.text.toString(),
+                          mobileNoTxt.text.toString());
+                    }));
+                  },
                   child: Text(
-                    '$resultNumber',
-                    style: TextStyle(fontSize: 20),
-                  ))
-            ],
-          ),
+                    'SEND DATA',
+                    style: TextStyle(fontSize: 18),
+                  )),
+            )
+          ],
         ),
       ),
     );

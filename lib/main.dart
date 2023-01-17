@@ -42,8 +42,12 @@ class _MyHomePageState extends State<MyHomePage> {
   var addresstxt = TextEditingController();
   var nameTxt = TextEditingController();
 
+  RangeValues rangeValues = RangeValues(18, 100);
+
   @override
   Widget build(BuildContext context) {
+    RangeLabels rangeLabels = RangeLabels(rangeValues.start.toInt().toString(),
+        rangeValues.end.toInt().toString());
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -1284,6 +1288,19 @@ class _MyHomePageState extends State<MyHomePage> {
               prefixIcon: const Icon(Icons.phone_android_rounded),
               onChanged: (mobileNoTxt) {
                 print(mobileNoTxt);
+              },
+            ),
+            RangeSlider(
+              values: rangeValues,
+              labels: rangeLabels,
+              activeColor: Colors.red,
+              inactiveColor: Colors.red.shade100,
+              divisions: 100,
+              min: 18,
+              max: 100,
+              onChanged: (value) {
+                rangeValues = value;
+                setState(() {});
               },
             ),
             Container(

@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Container(
           width: double.infinity,
           height: double.infinity,
-          color: Colors.blue,
+          color: Colors.red,
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(

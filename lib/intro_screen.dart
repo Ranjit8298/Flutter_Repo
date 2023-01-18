@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_repo/home_screen.dart';
 import 'package:flutter_repo/main.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -34,7 +35,7 @@ class IntroScreen extends StatelessWidget {
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return MyHomePage(title: 'Flutter Demo');
+                    return HomeScreen();
                   }));
                 },
                 child: Text(

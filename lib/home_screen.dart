@@ -14,12 +14,13 @@ class _HomeScreenState extends State<HomeScreen> {
   var _height = 200.0;
   bool flag = true;
   Color bgColor = Colors.blue;
+  var arrData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text('Profile')),
+        title: const Center(child: Text('Profile')),
       ),
       // body: Center(
       //   child: Column(
@@ -53,105 +54,37 @@ class _HomeScreenState extends State<HomeScreen> {
       //   ),
       // ),
 
-      body: ListView(
-        children: [
-          InkWell(
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return UserDetailsScreen();
-              }));
-            },
-            child: Hero(
-              tag: 'background',
-              child: Container(
-                width: 335,
-                height: 60,
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                      topRight: Radius.circular(10),
-                      bottomLeft: Radius.circular(10)),
-                  color: Colors.grey.shade400,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      width: 45.0,
-                      height: 45.0,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage('assets/images/man_one.jpg'),
-                        ),
-                      ),
+      //
+
+      body: ListWheelScrollView(
+          itemExtent: 200,
+          children: arrData
+              .map((item) => Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      child: Center(
+                          child: Text(
+                        '$item',
+                        style: TextStyle(fontSize: 20, color: Colors.white),
+                      )),
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.red,
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.blue,
+                              offset: Offset(
+                                3.0,
+                                3.0,
+                              ),
+                              blurRadius: 10.0,
+                              spreadRadius: 2.0,
+                            ), //BoxShadow
+                          ]),
                     ),
-                    const Text(
-                      'Ranjit Kumar',
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 0.3),
-                    ),
-                    Text(
-                      'View',
-                      style: TextStyle(fontSize: 18, color: Colors.red),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Container(
-            width: 335,
-            height: 60,
-            margin: const EdgeInsets.all(10),
-            padding: const EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(10),
-                  bottomLeft: Radius.circular(10)),
-              color: Colors.grey.shade400,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  width: 45.0,
-                  height: 45.0,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/images/the_chef_logo.png'),
-                    ),
-                  ),
-                ),
-                const Text(
-                  'Aanand Kumar',
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 0.3),
-                ),
-                InkWell(
-                  onTap: () {
-                    print('object');
-                  },
-                  child: const Text(
-                    'View',
-                    style: TextStyle(fontSize: 18, color: Colors.red),
-                  ),
-                )
-              ],
-            ),
-          ),
-        ],
-      ),
+                  ))
+              .toList()),
     );
   }
 }

@@ -15,7 +15,8 @@ class CustomTextField extends StatelessWidget {
       required this.hintText,
       required this.prefixIcon,
       required this.labelText,
-      required this.onChanged});
+      required this.onChanged,
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +25,8 @@ class CustomTextField extends StatelessWidget {
       child: TextField(
         controller: controllerTxt,
         keyboardType: keyboardType,
+        autocorrect: true,
+        // obscureText: obscureText,
         onChanged: onChanged(controllerTxt),
         decoration: InputDecoration(
           hintText: hintText,

@@ -3,7 +3,10 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_repo/home_screen.dart';
+import 'package:flutter_repo/profile_screen.dart';
+import 'package:flutter_repo/signup_screen.dart';
 import 'package:flutter_repo/main.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,14 +17,29 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  void initState() {
+  Future<void> initState() async {
     super.initState();
 
-    Timer(const Duration(seconds: 3), (() {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-        return const HomeScreen();
-      }));
-    }));
+    var prefs = await SharedPreferences.getInstance();
+    var checkLogin = prefs.getBool('isLogin');
+
+    if (checkLogin != null) {
+      if (checkLogin) {
+        Timer(const Duration(seconds: 3), (() {
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) {
+            return const ProfileScreen();
+          }));
+        }));
+      } else {
+        Timer(const Duration(seconds: 3), (() {
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) {
+            return const SignupScreen();
+          }));
+        }));
+      }
+    }
   }
 
   @override

@@ -75,7 +75,7 @@ class _SignupScreenState extends State<SignupScreen> {
       prefs.setString('password', password);
 
     Timer(const Duration(seconds: 3), (() {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
         return const LoginScreen();
       }));
     }));

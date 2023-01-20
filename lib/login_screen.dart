@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_repo/intro_screen.dart';
@@ -16,17 +18,6 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreen extends State<LoginScreen> {
   var emailTxt = TextEditingController();
   var passwordTxt = TextEditingController();
-
-  Future<bool?> showToast(String toastMsg) {
-    return Fluttertoast.showToast(
-        msg: toastMsg,
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.BOTTOM,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.grey,
-        textColor: Colors.white,
-        fontSize: 16.0);
-  }
 
   Future<void> validate() async {
     var prefs = await SharedPreferences.getInstance();
@@ -47,11 +38,27 @@ class _LoginScreen extends State<LoginScreen> {
       showToast('You are not register with us');
     } else {
       prefs.setBool('isLogin', true);
-      Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) {
-          return const ProfileScreen();
-        }));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+        return const ProfileScreen();
+      }));
     }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    validate();
+  }
+
+  Future<bool?> showToast(String toastMsg) {
+    return Fluttertoast.showToast(
+        msg: toastMsg,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.grey,
+        textColor: Colors.white,
+        fontSize: 16.0);
   }
 
   @override
@@ -59,7 +66,7 @@ class _LoginScreen extends State<LoginScreen> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Center(child: Text('Login')),
+        title: Text('Login'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),

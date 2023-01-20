@@ -17,28 +17,29 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  Future<void> initState() async {
+  void initState() {
     super.initState();
+    checkLoginFunction();
+  }
 
+  Future<void> checkLoginFunction() async {
     var prefs = await SharedPreferences.getInstance();
     var checkLogin = prefs.getBool('isLogin');
 
-    if (checkLogin != null) {
-      if (checkLogin) {
-        Timer(const Duration(seconds: 3), (() {
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) {
-            return const ProfileScreen();
-          }));
+    if (checkLogin != null && checkLogin == true) {
+      Timer(const Duration(seconds: 3), (() {
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) {
+          return const ProfileScreen();
         }));
-      } else {
-        Timer(const Duration(seconds: 3), (() {
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) {
-            return const SignupScreen();
-          }));
+      }));
+    } else {
+      Timer(const Duration(seconds: 3), (() {
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) {
+          return const SignupScreen();
         }));
-      }
+      }));
     }
   }
 

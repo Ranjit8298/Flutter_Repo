@@ -2,10 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_repo/intro_screen.dart';
 import 'package:flutter_repo/login_screen.dart';
 import 'package:flutter_repo/widgets/custom_textfield.dart';
-import 'package:flutter_repo/widgets/custom_toast.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shared_preferences/shared_preferences.dart';

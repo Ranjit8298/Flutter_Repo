@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_repo/table_chart.dart';
 import 'package:flutter_repo/widgets/custom_alert_box.dart';
 import 'package:flutter_repo/widgets/custom_textfield.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -18,6 +19,10 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   var nameTxt = TextEditingController();
   var jobTxt = TextEditingController();
+  String? gender;
+  bool isChecked = false;
+  bool isChecked2 = false;
+  bool isSwitch = false;
 
   Future<bool?> showToast(String toastMsg) {
     return Fluttertoast.showToast(
@@ -64,6 +69,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Color getColor(Set<MaterialState> states) {
+    //   const Set<MaterialState> interactiveStates = <MaterialState>{
+    //     MaterialState.pressed,
+    //     MaterialState.hovered,
+    //     MaterialState.focused,
+    //   };
+    //   if (states.any(interactiveStates.contains)) {
+    //     return Colors.blue;
+    //   }
+    //   return Colors.red;
+    // }
+
     return Scaffold(
       drawer: SizedBox(
         width: 270,
@@ -131,7 +148,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Center(child: Text('Profile')),
+          Center(child: const Text('Profile')),
           Icon(Icons.notifications_rounded),
         ],
       )),
@@ -170,6 +187,90 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   )),
             ),
             CustomAlertBox(),
+            CheckboxListTile(
+              value: isChecked,
+              onChanged: (bool? value) {
+                setState(() {
+                  isChecked = value!;
+                });
+              },
+              title: Text('Can you agree with us?'),
+              subtitle: Text('verify with us'),
+            ),
+            CheckboxListTile(
+              value: isChecked2,
+              onChanged: (bool? value) {
+                setState(() {
+                  isChecked2 = value!;
+                });
+              },
+              title: Text('Please verify you are human'),
+              subtitle: Text('verify with us'),
+            ),
+            Column(
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text('Select Gender'),
+                RadioListTile(
+                  title: Text("Male"),
+                  value: "male",
+                  groupValue: gender,
+                  onChanged: (value) {
+                    setState(() {
+                      gender = value.toString();
+                    });
+                  },
+                ),
+                RadioListTile(
+                  title: Text("Female"),
+                  value: "female",
+                  groupValue: gender,
+                  onChanged: (value) {
+                    setState(() {
+                      gender = value.toString();
+                    });
+                  },
+                ),
+              ],
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  final snackBar = SnackBar(
+                    content:
+                        const Text('Are you sure want to delete the data?'),
+                    action: SnackBarAction(
+                      label: 'UNDO',
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: ((context) {
+                          return TableAndChartScreen(points: [],);
+                        })));
+                      },
+                    ),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                },
+                child: Text('Show SnackBar')),
+            Tooltip(
+              waitDuration: Duration(seconds: 1),
+              showDuration: Duration(seconds: 2),
+              padding: EdgeInsets.all(5),
+              message: 'User Account',
+              child: IconButton(
+                icon: Icon(Icons.high_quality),
+                onPressed: () {
+                  /* your code */
+                },
+              ),
+            ),
+            Switch(
+              value: isSwitch,
+              onChanged: (bool? value) {
+                setState(() {
+                  isSwitch = value!;
+                });
+              },
+            )
           ],
         ),
       ),

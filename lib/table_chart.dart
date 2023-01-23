@@ -2,6 +2,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_repo/data/price_point.dart';
+import 'package:flutter_repo/tab_bar_screen.dart';
 
 class TableAndChartScreen extends StatefulWidget {
   const TableAndChartScreen({super.key, required this.points});
@@ -103,12 +104,22 @@ class _TableAndChartScreenState extends State<TableAndChartScreen> {
                 aspectRatio: 2,
                 child: BarChart(BarChartData(barGroups: _chartGroups())),
               ),
-              AspectRatio(
-                  aspectRatio: 1.0,
-                  child: PieChart(PieChartData(
-                    centerSpaceRadius: 48.0,
-                    centerSpaceColor: Colors.red
-                  )))
+              // AspectRatio(
+              //     aspectRatio: 1.0,
+              //     child: PieChart(PieChartData(
+              //       centerSpaceRadius: 48.0,
+              //       centerSpaceColor: Colors.red
+              //     ))),
+
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return const TabBarScreen();
+                      },
+                    ));
+                  },
+                  child: const Text('NEXT'))
             ],
           ),
         ),
